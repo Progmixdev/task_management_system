@@ -43,7 +43,6 @@
                 @endif
 
                 <div class="mt-6">
-                    <!-- عند النقر، سيتم فتح نافذة منبثقة وتحميل محتوى الفورم عبر AJAX -->
                     <a href="#task-popup" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded open-popup-link" data-project-id="{{ $projectId }}">
                         + Add Task
                     </a>
@@ -51,12 +50,8 @@
 
                 <!-- Popup Content -->
                 <div id="task-popup" class="mfp-hide">
-                    <!-- سيتم تحميل الفورم داخل هذا العنصر باستخدام AJAX -->
                     <div id="popup-content"></div>
                 </div>
-
-
-
                 <div class="mt-6">
                     {{ $tasks->links() }}
                 </div>
