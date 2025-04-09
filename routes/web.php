@@ -22,13 +22,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/projects/{projectId}/tasks', [ProjectController::class, 'getTasksByProject'])->name('projects.tasks');
 
     Route::get('/tasks/{projectId}/create', [TaskController::class, 'create'])->name('tasks.create');
-    Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');
-
+    Route::post('/tasks', [TaskController::class, 'store'])->name(name: 'tasks.store');
 
     Route::post('/tasks/{taskId}/toggle-status', [TaskController::class, 'toggleTaskStatus'])->name('tasks.toggleStatus');
-
-    // Route::get('/tasks/{taskId}/edit', [TaskController::class, 'edit'])->name('tasks.edit');
-    // Route::put('/tasks/{taskId}', [TaskController::class, 'update'])->name('tasks.update');
 
 });
 

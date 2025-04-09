@@ -50,8 +50,4 @@ class User extends Authenticatable
         return $this->hasMany(Project::class, 'created_by');
     }
 
-    public function tasks()
-    {
-        return $this->hasMany(Task::class, 'assigned_to');
-    }
 }

@@ -17,9 +17,11 @@ class ProjectController extends Controller
 
     public function getTasksByProject($projectId)
     {
-        $tasks = Project::findOrFail($projectId)->tasks;
-        // return response()->json($tasks);
+        $tasks = Task::where('project_id', $projectId)
+            ->orderBy('due_date')
+            ->paginate(5);
 
         return view('tasks.index', compact('tasks', 'projectId'));
+        // return response()->json($tasks);
     }
 }
